@@ -6,10 +6,10 @@ import { t } from '../../utils/i18n';
 import GuideBackToTodoLink from './GuideBackToTodoLink';
 
 const GuideFilterPage = (props) => {
-  const { changePage, initialPath, pageData, infoIcon } = props;
+  const { changePage, pageData, infoIcon } = props;
 
   return div({ className: 'container' }, [
-    r(GuideBackToTodoLink, { changePage, initialPath }),
+    r(GuideBackToTodoLink, { changePage }),
     h2({ className: css.title }, t('web.admin.onboarding.guide.filter.title')),
     p({ className: css.description }, [
       t('web.admin.onboarding.guide.filter.description.content',
@@ -48,7 +48,6 @@ const GuideFilterPage = (props) => {
 
 GuideFilterPage.propTypes = {
   changePage: PropTypes.func.isRequired,
-  initialPath: PropTypes.string.isRequired,
   infoIcon: PropTypes.string.isRequired,
   pageData: PropTypes.shape({
     cta: PropTypes.string.isRequired,

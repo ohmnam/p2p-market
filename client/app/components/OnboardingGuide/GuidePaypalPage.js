@@ -6,10 +6,10 @@ import { t } from '../../utils/i18n';
 import GuideBackToTodoLink from './GuideBackToTodoLink';
 
 const GuidePaypalPage = (props) => {
-  const { changePage, initialPath, pageData, infoIcon } = props;
+  const { changePage, pageData, infoIcon } = props;
 
   return div({ className: 'container' }, [
-    r(GuideBackToTodoLink, { changePage, initialPath }),
+    r(GuideBackToTodoLink, { changePage }),
     h2({ className: css.title }, t('web.admin.onboarding.guide.paypal.title')),
     p({ className: css.description }, t('web.admin.onboarding.guide.paypal.description_p1')),
     p({ className: css.description }, t('web.admin.onboarding.guide.paypal.description_p2')),
@@ -50,7 +50,6 @@ const GuidePaypalPage = (props) => {
 
 GuidePaypalPage.propTypes = {
   changePage: PropTypes.func.isRequired,
-  initialPath: PropTypes.string.isRequired,
   infoIcon: PropTypes.string.isRequired,
   pageData: PropTypes.shape({
     cta: PropTypes.string.isRequired,

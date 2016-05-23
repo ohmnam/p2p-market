@@ -6,10 +6,10 @@ import { t } from '../../utils/i18n';
 import GuideBackToTodoLink from './GuideBackToTodoLink';
 
 const GuideInvitationPage = (props) => {
-  const { changePage, initialPath, pageData, infoIcon } = props;
+  const { changePage, pageData, infoIcon } = props;
 
   return div({ className: 'container' }, [
-    r(GuideBackToTodoLink, { changePage, initialPath }),
+    r(GuideBackToTodoLink, { changePage }),
     h2({ className: css.title }, t('web.admin.onboarding.guide.invitation.title')),
     p({ className: css.description }, t('web.admin.onboarding.guide.invitation.description.content', {
       preview_link: a({
@@ -43,7 +43,6 @@ const GuideInvitationPage = (props) => {
 
 GuideInvitationPage.propTypes = {
   changePage: PropTypes.func.isRequired,
-  initialPath: PropTypes.string.isRequired,
   infoIcon: PropTypes.string.isRequired,
   pageData: PropTypes.shape({
     cta: PropTypes.string.isRequired,
