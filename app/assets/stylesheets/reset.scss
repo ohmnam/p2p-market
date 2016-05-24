@@ -123,6 +123,10 @@ input, textarea, button, select {
   vertical-align: baseline;
   font-family: inherit; }
 
+select {
+  margin: 1px;
+}
+
 button,
 html input[type="button"],
 input[type="reset"],

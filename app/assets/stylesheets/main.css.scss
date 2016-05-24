@@ -236,7 +236,7 @@ ul {
 
   @include media(tablet) {
     display: block;
-    position: absolute;
+    float: left;
     a {
       position: relative;
       padding: $selected-highlight-padding lines(0.5);
@@ -1928,6 +1928,8 @@ figure.fluidratio {
   Branding
 */
 .branding-container {
+  clear:  both;
+
   hr {
     color: #EBEBEB;
     background-color: #EBEBEB;
