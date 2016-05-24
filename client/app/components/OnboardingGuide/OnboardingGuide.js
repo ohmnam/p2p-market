@@ -162,8 +162,8 @@ OnboardingGuide.propTypes = {
         ]).isRequired,
         info_image: string,
         cta: string.isRequired,
-        alternative_cta: string,
         complete: bool.isRequired,
+        additional_info: object
       }).isRequired
     ).isRequired,
   }).isRequired,

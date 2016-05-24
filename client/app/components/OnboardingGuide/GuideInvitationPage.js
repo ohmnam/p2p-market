@@ -2,6 +2,7 @@ import { PropTypes } from 'react';
 import r, { div, h2, p, img, a } from 'r-dom';
 import css from './OnboardingGuide.css';
 import { t } from '../../utils/i18n';
+import { Routes } from '../../utils/routes';
 
 import GuideBackToTodoLink from './GuideBackToTodoLink';
 
@@ -37,7 +38,7 @@ const GuideInvitationPage = (props) => {
       div({ className: css.infoTextContent }, t('web.admin.onboarding.guide.invitation.advice')),
     ]),
 
-    a({ className: css.nextButton, href: pageData.cta }, t('web.admin.onboarding.guide.invitation.invite_users')),
+    a({ className: css.nextButton, href: Routes.new_invitation_path() }, t('web.admin.onboarding.guide.invitation.invite_users')),
   ]);
 };
 
@@ -45,7 +46,6 @@ GuideInvitationPage.propTypes = {
   changePage: PropTypes.func.isRequired,
   infoIcon: PropTypes.string.isRequired,
   pageData: PropTypes.shape({
-    cta: PropTypes.string.isRequired,
     info_image: PropTypes.string,
   }).isRequired,
 };
