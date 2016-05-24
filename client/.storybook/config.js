@@ -7,6 +7,9 @@ function loadStories() {
   require('../app/components/Styleguide/ColorsAndTypography.js');
   require('../app/components/Topbar/Logo.story.js');
   require('../app/components/Topbar/Topbar.story.js');
-}
+  require('../app/components/OnboardingTopbar/OnboardingTopbar.story.js');
+  require('../app/components/OnboardingGuide/OnboardingGuide.story.js');
+  require('../app/components/SearchBar/SearchBar.story.js');
+};
 
 configure(loadStories, module);
