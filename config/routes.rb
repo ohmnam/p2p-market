@@ -142,7 +142,8 @@ Kassi::Application.routes.draw do
       get   "/settings" => "communities#settings",        as: :settings
       patch "/settings" => "communities#update_settings", as: :update_settings
 
-      get "getting_started_guide(/*all)" => "getting_started_guide#index", as: :getting_started_guide
+      get "getting_started_guide"        => "getting_started_guide#index", as: :getting_started_guide
+      get "getting_started_guide(/*all)" => "getting_started_guide#index"
 
       resources :communities do
         member do
