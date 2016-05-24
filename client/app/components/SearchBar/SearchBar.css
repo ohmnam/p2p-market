@@ -1,0 +1,29 @@
+.root {
+  display: flex;
+  border: 1px solid #eee;
+  border-radius: 1em;
+  padding: 0 1em;
+}
+
+.keywordInput,
+.locationInput {
+  line-height: 3em;
+  border: none;
+  flex: auto;
+  width: 20%;
+  transition: width 0.5s ease-in-out;
+
+  &:focus {
+    width: 80%;
+  }
+}
+
+/* A separating border is added only when the two inputs are next to each other. */
+.keywordInput + .locationInput {
+  border-left: 1px solid #eee;
+}
+
+.searchButton {
+  border: none;
+  width: 3em;
+}

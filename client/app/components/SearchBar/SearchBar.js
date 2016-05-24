@@ -1,5 +1,8 @@
 import { Component, PropTypes } from 'react';
 import { form, input, button } from 'r-dom';
+import { t } from '../../utils/i18n';
+
+import css from './SearchBar.css';
 
 const SEARCH_MODE_KEYWORD = 'keyword';
 const SEARCH_MODE_LOCATION = 'location';
@@ -10,29 +13,34 @@ const SEARCH_MODES = [
   SEARCH_MODE_KEYWORD_AND_LOCATION,
 ];
 
-const searchInput = (placeholder) => input({
+const searchInput = (className, placeholder) => input({
+  className,
   type: 'search',
   placeholder,
 });
 
 class SearchBar extends Component {
   render() {
-    const { mode } = this.props;
+    const { mode, keywordPlaceholder, locationPlaceholder } = this.props;
     const inputs = [];
 
-    // TODO: translations
     if (mode === SEARCH_MODE_KEYWORD || mode === SEARCH_MODE_KEYWORD_AND_LOCATION) {
-      inputs.push(searchInput('Search...'));
+      inputs.push(searchInput(css.keywordInput, keywordPlaceholder));
     }
     if (mode === SEARCH_MODE_LOCATION || mode === SEARCH_MODE_KEYWORD_AND_LOCATION) {
-      inputs.push(searchInput('Location'));
+      inputs.push(searchInput(css.locationInput, locationPlaceholder));
     }
-    return form({}, [...inputs, button({ type: 'submit' })]);
+    return form({ className: css.root }, [
+      ...inputs,
+      button({ className: css.searchButton, type: 'submit' }),
+    ]);
   }
 }
 
 SearchBar.propTypes = {
   mode: PropTypes.oneOf(SEARCH_MODES).isRequired,
+  keywordPlaceholder: PropTypes.string.isRequired,
+  locationPlaceholder: PropTypes.string.isRequired,
 };
 
 export default SearchBar;

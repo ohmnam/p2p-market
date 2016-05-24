@@ -3,10 +3,15 @@ import withProps from '../Styleguide/withProps';
 
 import SearchBar from './SearchBar';
 
+const defaultProps = {
+  keywordPlaceholder: 'Search...',
+  locationPlaceholder: 'Location',
+};
+
 storiesOf('Top bar search')
   .add('keyword', () =>
-       withProps(SearchBar, { mode: 'keyword' }))
+       withProps(SearchBar, { ...defaultProps, mode: 'keyword' }))
   .add('location', () =>
-       withProps(SearchBar, { mode: 'location' }))
+       withProps(SearchBar, { ...defaultProps, mode: 'location' }))
   .add('keyword and location', () =>
-       withProps(SearchBar, { mode: 'keyword-and-location' }));
+       withProps(SearchBar, { ...defaultProps, mode: 'keyword-and-location' }));
