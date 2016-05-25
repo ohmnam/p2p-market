@@ -7,10 +7,11 @@
 
 .keywordInput,
 .locationInput {
+  background-image: url('./images/search-icon.svg');
   line-height: 3em;
   border: none;
   flex: auto;
-  width: 20%;
+  width: 10%;
   transition: width 0.5s ease-in-out;
 
   &:focus {
@@ -26,4 +27,9 @@
 .searchButton {
   border: none;
   width: 3em;
+  background-color: transparent;
+  background-image: url('./images/search-icon.svg');
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
