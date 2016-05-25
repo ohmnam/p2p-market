@@ -10,6 +10,6 @@ function loadStories() {
   require('../app/components/OnboardingTopbar/OnboardingTopbar.story.js');
   require('../app/components/OnboardingGuide/OnboardingGuide.story.js');
   require('../app/components/SearchBar/SearchBar.story.js');
-};
+}
 
 configure(loadStories, module);
